@@ -1,10 +1,9 @@
 <?php
 
-$lang = readline("Choose language fr, en, es, de, it, clg: ");
-$translations = require "local/$lang.php";
-
 date_default_timezone_set('UTC');
 $today = date("H:i:s");
+$lang = readline("Choose language fr, en, es, de, it, clg: ");
+$translations = require "local/$lang.php";
 $word = $translations['morning'];
 $a = "";
 
@@ -17,8 +16,6 @@ if (date("H") < 12) {
 }
 
 echo $word;
-
-
 
 while ($a !== "exit") {
     $a = readline($translations['enter_word']);
@@ -34,7 +31,7 @@ while ($a !== "exit") {
         } else {
             echo "$word";
         }
-        break; // Sortir de la boucle
+        break;
     }
 
     if ($a === strrev($a)) {
