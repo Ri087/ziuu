@@ -37,4 +37,6 @@ while ($a !== "exit") {
     if ($a === strrev($a)) {
         echo $translations['well_said'] . "\n";
     }
+
+    echo $a . "\n";
 }
