@@ -1,26 +1,25 @@
-# Application PHP Multilingue
+# Application PHP Simple - Version Optimisée
 
 ## Description
 
-Cette application PHP interactive permet d'afficher des salutations dans différentes langues selon l'heure de la journée et propose un jeu de mots palindromes multilingue.
+Cette application PHP interactive simple permet de saisir des mots et détecte automatiquement les palindromes.
 
 ## Fonctionnalités
 
-### 1. Salutations contextuelles
-- Affiche "Bonjour/Good morning" le matin (avant 12h)
-- Affiche "Bon après-midi/Good afternoon" l'après-midi (12h-18h)
-- Affiche "Bonsoir/Good evening" le soir (après 18h)
+### 1. Saisie de mots
 
-### 2. Support multilingue
-L'application supporte 6 langues :
-- **fr** : Français
-- **en** : Anglais
-- **es** : Espagnol
-- **de** : Allemand
-- **it** : Italien
+- Interface simple en ligne de commande
+- Saisie continue jusqu'à "exit"
+- Gestion des entrées vides
+
+### 2. Détection de palindromes
+
+- Détection automatique des mots palindromes
+- Affichage spécial pour les palindromes détectés
 - **clg** : Klingon
 
 ### 3. Jeu de palindromes
+
 - L'utilisateur peut entrer des mots
 - Si le mot est un palindrome (se lit de la même façon dans les deux sens), l'application affiche "Bien dit"
 - Pour quitter, tapez "exit"
@@ -43,6 +42,7 @@ cours/
 ## Utilisation
 
 ### Prérequis
+
 - PHP 7.0 ou supérieur
 - Terminal/ligne de commande
 
@@ -51,6 +51,7 @@ cours/
 1. Ouvrez un terminal
 2. Naviguez vers le dossier du projet
 3. Exécutez la commande :
+
 ```bash
 php index.php
 ```
@@ -74,7 +75,7 @@ Le fichier principal contient la logique suivante :
 1. **Initialisation** : Charge les traductions françaises par défaut
 2. **Détection de l'heure** : Affiche la salutation appropriée selon l'heure
 3. **Sélection de langue** : Demande à l'utilisateur de choisir une langue
-4. **Boucle interactive** : 
+4. **Boucle interactive** :
    - Demande à l'utilisateur d'entrer un mot
    - Vérifie si c'est un palindrome
    - Continue jusqu'à ce que l'utilisateur tape "exit"
@@ -83,6 +84,7 @@ Le fichier principal contient la logique suivante :
 ## Fonctions clés
 
 ### Détection de palindrome
+
 ```php
 if ($a === strrev($a)) {
     echo $translations['well_said'] . "\n";
@@ -90,6 +92,7 @@ if ($a === strrev($a)) {
 ```
 
 ### Gestion du temps
+
 ```php
 if (date("H") < 12) {
     $word = $translations['morning'] . "\n";
