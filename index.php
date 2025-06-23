@@ -1,6 +1,7 @@
 <?php
 
-$translations = require_once 'local/fr.php';
+$lang = readline("Choose language fr, en, es, de, it, clg: ");
+$translations = require "local/$lang.php";
 
 date_default_timezone_set('UTC');
 $today = date("H:i:s");
@@ -17,8 +18,7 @@ if (date("H") < 12) {
 
 echo $word;
 
-$lang = readline("choos language fr, en, es, de, it, pt, ru, zh, ja, ko: ");
-$translations = require "local/$lang.php";
+
 
 while ($a !== "exit") {
     $a = readline($translations['enter_word']);
